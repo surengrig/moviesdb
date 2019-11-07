@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-//TODO
-
 package app.example.movies.repository.terndingmovies
 
 import androidx.lifecycle.LiveData
@@ -36,7 +34,7 @@ class DataSourceFactory(
     private val apiService: ApiService
 ) : DataSource.Factory<Int, TrendingMovies.Movie>() {
 
-    val _sourceLiveData = MutableLiveData<MoviesDataSource>()
+    private val _sourceLiveData = MutableLiveData<MoviesDataSource>()
     val sourceLiveData: LiveData<MoviesDataSource> get() = _sourceLiveData
 
     override fun create(): DataSource<Int, TrendingMovies.Movie> {
