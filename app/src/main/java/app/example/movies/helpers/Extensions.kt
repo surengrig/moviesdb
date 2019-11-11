@@ -1,6 +1,5 @@
 package app.example.movies.helpers
 
-import app.example.movies.db.TrendingMovie
 import app.example.movies.model.Movie
 import app.example.movies.model.TrendingMovies
 import retrofit2.HttpException
@@ -26,15 +25,6 @@ sealed class Result<out T : Any> {
     object Loaded : Result<Nothing>()
     data class Failure(val error: Throwable?) : Result<Nothing>()
 }
-
-fun TrendingMovies.Movie.toTrendingMovie() =
-    TrendingMovie(
-        movieId = id,
-        title = title,
-        posterPath = posterPath,
-        name = name,
-        overview = overview
-    )
 
 fun TrendingMovies.Movie.toMovie(): Movie {
     return Movie(
