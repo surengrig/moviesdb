@@ -313,15 +313,7 @@ class MoviesRepositoryTest {
         } while (this.size != oldSize)
     }
 
-    /**
-     * simple observer that logs the latest value it receives
-     */
-    private class LoggingObserver<T> : Observer<T> {
-        var value: T? = null
-        override fun onChanged(t: T?) {
-            this.value = t
-        }
-    }
+
 }
 
 
