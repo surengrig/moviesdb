@@ -1,7 +1,6 @@
 package app.example.movies
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import androidx.lifecycle.Observer
 import app.example.movies.helpers.Result
 import app.example.movies.model.Movie
 import app.example.movies.repository.moviedetails.MovieDetailsRepositoryImpl
@@ -155,18 +154,6 @@ class MovieDetailsRepositoryTest {
         assertThat(actual, CoreMatchers.`is`(expected))
     }
 
-    /**
-     * simple observer that logs the latest value it receives
-     */
-    class LoggingObserver<T> : Observer<T> {
-        var value: T? = null
-        override fun onChanged(t: T?) {
-            this.value = t
-        }
-
-
-    }
 }
-
 
 
